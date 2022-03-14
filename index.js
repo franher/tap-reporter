@@ -42,7 +42,7 @@ function Formatter (type, options) {
   }
 
   var runner = this.runner = new Runner(options)
-  this.reporter = new reporters[type](this.runner, {})
+  this.reporter = new reporters[type](this.runner, options)
   Writable.call(this, options)
 
   runner.on('end', function () {
@@ -81,7 +81,9 @@ function usage (err) {
   console[err ? 'error' : 'log'](function () {/*
 Usage:
   tap-mocha-reporter <type>
-
+Options:
+	-o <file>,  --output <file> If present, writes report to given path, otherwise prints to stdout.
+	-p <prependPath>, --prependTestFileName <prependPath> If present, prepends to the file path the value of the flag
 Reads TAP data on stdin, and formats to stdout using the specified
 reporter.  (Note that some reporters write to files instead of stdout.)
 
@@ -90,9 +92,43 @@ reporter.  (Note that some reporters write to files instead of stdout.)
 }
 
 if (require.main === module) {
+
+  function getOutputPath(flag) {
+    const index = process.argv.indexOf(flag);
+    if (process.argv[index + 1]) {
+      return process.argv[index + 1];
+    } else {
+      throw new Error('Output path must be defined');
+    }
+  }
+
+  function getPrependTestFileName(flag) {
+    const index = process.argv.indexOf(flag);
+    if (process.argv[index + 1]) {
+      return process.argv[index + 1];
+    }
+    return '';
+  }
+
+  let outputPath ='';
+  let prependTestFileName = '';
+  if (process.argv.indexOf('--output') > 0) {
+    outputPath = getOutputPath('--output');
+  }
+  if (process.argv.indexOf('-o') > 0) {
+    outputPath = getOutputPath('-o');
+  }
+
+  if (process.argv.indexOf('-p') > 0) {
+   prependTestFileName = getPrependTestFileName('-p');
+  }
+
+  if (process.argv.indexOf('--prependTestFileName') > 0) {
+    prependTestFileName = getPrependTestFileName('--prependTestFileName');
+  }
+
   var type = process.argv[2]
   if (!type)
     return usage()
-
-  process.stdin.pipe(new Formatter(type))
+  process.stdin.pipe(new Formatter(type, {reporterOptions: {output: outputPath, prependTestFileName}}))
 }
