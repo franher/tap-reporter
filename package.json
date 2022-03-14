@@ -1,36 +1,39 @@
 {
-  "name": "tap-mocha-reporter",
-  "version": "5.0.3",
-  "description": "Format a TAP stream using Mocha's set of reporters",
+  "name": "tap-reporter",
+  "version": "1.0.0",
+  "description": "Format a TAP stream using a different set of reporters, mainly Mocha's and SonarQube Generic Test Data Execuion.",
   "main": "index.js",
+  "keywords": [
+    "tap",
+    "TAP",
+    "mocha",
+    "sonar",
+    "sonarqube",
+    "reporter",
+    "test"
+  ],
   "scripts": {
-    "test": "tap test/*.js",
-    "preversion": "npm test",
-    "postversion": "npm publish",
-    "postpublish": "git push origin --follow-tags"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/isaacs/tap-mocha-reporter"
+    "url": "https://github.com/franher/tap-reporter"
   },
-  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+  "author": "Fran Herrero <fran.herrero.perez@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+    "url": "https://github.com/isaacs/tap-reporter/issues"
   },
-  "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+  "homepage": "https://github.com/isaacs/tap-reporter",
   "dependencies": {
-    "color-support": "^1.1.0",
-    "debug": "^4.1.1",
-    "diff": "^4.0.1",
-    "escape-string-regexp": "^2.0.0",
-    "glob": "^7.0.5",
-    "tap-parser": "^11.0.0",
+    "color-support": "^1.1.3",
+    "debug": "^4.3.3",
+    "diff": "^5.0.0",
+    "escape-string-regexp": "^4.0.0",
+    "glob": "^7.2.0",
+    "tap-parser": "^11.0.1",
     "tap-yaml": "^1.0.0",
     "unicode-length": "^2.0.2"
-  },
-  "devDependencies": {
-    "tap": "^15.1.6"
   },
   "bin": "index.js",
   "files": [
@@ -38,6 +41,14 @@
     "lib"
   ],
   "engines": {
-    "node": ">= 8"
+    "node": ">= 10"
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
   }
 }
