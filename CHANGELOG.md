@@ -1,5 +1,11 @@
 # tap-reporter
 
+## 1.0.1
+
+### Patch Changes
+
+- a10cfb5: fix typo on the test case xml tag. It must be `testCase` instead of `testcase`.
+
 ## 1.0.0
 
 ### Major Changes
