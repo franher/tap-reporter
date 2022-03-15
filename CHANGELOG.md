@@ -1,5 +1,11 @@
 # tap-reporter
 
+## 1.0.2
+
+### Patch Changes
+
+- fdf7ea8: fix: use duration as XML tag attr
+
 ## 1.0.1
 
 ### Patch Changes
