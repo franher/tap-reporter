@@ -22,9 +22,9 @@
   "author": "Fran Herrero <fran.herrero.perez@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/isaacs/tap-reporter/issues"
+    "url": "https://github.com/franher/tap-reporter/issues"
   },
-  "homepage": "https://github.com/isaacs/tap-reporter",
+  "homepage": "https://github.com/franher/tap-reporter",
   "dependencies": {
     "color-support": "^1.1.3",
     "debug": "^4.3.3",
