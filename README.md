@@ -2,6 +2,7 @@
 
 Format a TAP stream using a different set of reporters, mainly [Mocha](https://mochajs.org/#reporters)'s.
 
+
 The main reporter outside the mocha reporters is `sonarqube`. This reporter generates a [Generic Execution Data](https://docs.sonarqube.org/latest/analysis/generic-test/), complatible with SonarQube.
 
 ## Disclaimer
