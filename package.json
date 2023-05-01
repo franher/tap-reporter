@@ -34,7 +34,7 @@
     "tap-parser": "^11.0.1",
     "tap-yaml": "^1.0.0",
     "unicode-length": "^2.0.2",
-    "date-fns": "2.29.3"
+    "date-fns": "2.30.0"
   },
   "bin": "index.js",
   "files": [
