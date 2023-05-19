@@ -1,6 +1,6 @@
 {
   "name": "tap-reporter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Format a TAP stream using a different set of reporters, mainly Mocha's and SonarQube Generic Test Data Execuion.",
   "main": "index.js",
   "keywords": [
